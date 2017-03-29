@@ -10,14 +10,14 @@ https://codefights.com/arcade/intro/level-9/xHvruDnQCx7mYom3T/description
 */
 
 function growingPlant(upSpeed, downSpeed, desiredHeight) {
-  var grow = 0;
-    for (var i = 0;; i++) {
-        grow += upSpeed;
-        if (grow >= desiredHeight) {
-            return i + 1;
-        }
-        grow -= downSpeed;
-    }
+	var height = 0;
+	var day = 1;
+	while(height < desiredHeight) {
+		height += upSpeed;
+		if(height>=desiredHeight) return day;
+		height-=downSpeed;
+		day++;
+	}
 }
 
 upSpeed = 10;
