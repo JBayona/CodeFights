@@ -19,6 +19,7 @@ https://codefights.com/arcade/intro/level-9/hoLtYWbjdrD2PF6yo/description
 
 function digitDegree(n) {
   var result = 0;
+  //We add the numbers until we have numbers bigger than 10
   while(n >= 10){
     n = sum(n);
     result++;
