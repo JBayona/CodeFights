@@ -36,6 +36,27 @@ function lineEncoding(s) {
   return result;
 }
 
+//Opción 2
+function lineEncoding(s) {
+
+  s += "#";
+  var cnt = 1;
+  var result = [];
+  for (var i = 1; i < s.length; i++) {
+    if (s.charAt(i) === s.charAt(i - 1)) {
+      cnt++;
+    } else {
+      if (cnt > 1) {
+        result.push(cnt);
+      }
+      result.push(s.charAt(i - 1));
+      cnt = 1;
+    }
+  }
+
+  return result.join("");
+}
+
 
 s = "aabbbc" //"2a3bc"
 console.log(lineEncoding(s));
