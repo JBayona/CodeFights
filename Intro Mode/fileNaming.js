@@ -15,14 +15,23 @@ function fileNaming(names) {
   var result = [];
   var count = 0;
   var temp = '';
+  //Set contiene valores únicos
   var set = new Set();
   names.forEach(function(item, index){
+    /*Si no está en el set, lo agregamos y lo metemos
+    a nuestro array del resultado*/
     if(!set.has(item)){
       set.add(item);
       result.push(item)
     }else{
+      //Si está vamos a verificar los nombres del archivo
       count = 0;
       ++count;
+      /*Siempre empezamos agregándole el (1) al nombre, si ya está,
+      vamos a ir incrementando a (2), (3)... hasta que encontremos
+      un espacio para meterlo a nuestro hash y al arreglo, cada nuevo
+      resultado lo meteremos al hash y al array para que no se repita el
+      nombre*/
       temp = item+'('+(count)+')';
       while(set.has(temp)){
         temp = item+'('+(count)+')';
