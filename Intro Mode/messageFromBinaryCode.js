@@ -18,14 +18,18 @@ function messageFromBinaryCode(code) {
   var tmp = "";
   var result = "";
   for(var i = 0; i < code.length; i++){
+    /*Al octavo elemento y que sea distinto de cero, concatenamos la respuesta, limpiamos
+    la variable y conctenamos la que está en la iteración en curso*/
     if(i%8 == 0 && i != 0){
       result += String.fromCharCode(parseInt(tmp,2));
       tmp = '';
       tmp += code[i];
     }else{
+      //Mientras que no sea el octvo elemento, vamos concatenando los números binarios
       tmp += code[i];
     }
   }
+  //Regresamos la conversión si es que había números restantes
   return result += String.fromCharCode(parseInt(tmp,2));
 }
 
