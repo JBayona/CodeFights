@@ -27,6 +27,6 @@ function countSumOfTwoRepresentations2(n, l, r) {
 }
 
 n = 6
-l = 3
-r = 3
+l = 2
+r = 4
 console.log(countSumOfTwoRepresentations2(n,l,r));
