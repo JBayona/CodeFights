@@ -1,3 +1,4 @@
+/*Print chess board*/
 function Chess(size){
 	result = "";
 	for(var i = 0; i < size; i++){
