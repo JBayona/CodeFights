@@ -26,7 +26,7 @@ function tripletSum(x, a) {
 // variables from two corners of the array and move
 // them toward each other
         left = i + 1; //Left será siempre uno adelante del loop
-        right = arr_size-1; //right siempre es el elemento de la izquierda
+        right = arr_size-1; //right siempre es el elemento de la derecha
         while (left < right){ //El loop sigue mientras no se crucen las variables
             if( a[i] + a[left] + a[right] == x){ //Si damos con la suma retornamos true
                 return true;
