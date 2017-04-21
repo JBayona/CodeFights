@@ -23,7 +23,7 @@ Output = [4,2,0,5,3,1,6]
 function suffix(s){
   var array = [];
   for(var i = 0; i < s.length; i++){
-    array[i] = i;
+    array[i] = i; //we only need the index to make the strings
   }
   array.sort(function(a,b){
     return s.substring(a).localeCompare(s.substring(b));
