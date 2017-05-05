@@ -33,7 +33,7 @@ function changeOfVowelsInCycle(cycle, text) {
   idx = ((size - cycle)%size + size)%size
   for(var i = 0; i < vowels.length; i++){
     shifted[i] = vowels[idx];
-    idx = (idx+1) % size
+    idx = (idx+1) % size;
   }
 
   //Format string output
