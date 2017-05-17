@@ -2,6 +2,7 @@
 Sumar los digitos del array, ejemplo
 array1 = [2,4] y array2 = [3,6], resultado = [6,0]
 array1 = [9,0] y array2 = [1,0], resultado = [1,0,0]
+Add arrays with carry
 */
 function addArrays(array1, array2) {
     var s1 = array1.length;
