@@ -11,10 +11,10 @@ totalBinSum(bin) = 16.
 
 Here are all the prefixes:
 
-1 = 110;
-10 = 210;
-100 = 410;
-1001 = 910.
+1 = 1;
+10 = 2;
+100 = 4;
+1001 = 9.
 Thus, the answer is 1 + 2 + 4 + 9 = 16.
 
 https://codefights.com/challenge/prd5XH6KJtWPRva4w
