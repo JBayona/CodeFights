@@ -32,7 +32,7 @@ function isListPalindrome(l) {
   var prev = null;
   var i = 0;
   while(cur){
-    if(i === parseInt(length/2)){ //Hace un round
+    if(i === parseInt(length/2)){ //Hace un floor
       //Par
       if(length%2 === 0){
         l2 = cur;
