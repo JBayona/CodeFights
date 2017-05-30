@@ -86,7 +86,7 @@ function reverseList(l) {
 l = new ListNode(3,new ListNode(5,new ListNode(3)));
 console.log(isListPalindrome(l));
 
-//Option 2 - Stack O(N) complejidad y espacio
+//Option 2 - Stack O(N) complejidad y O(N)espacio
 
 // Definition for singly-linked list:
 // function ListNode(x) {
