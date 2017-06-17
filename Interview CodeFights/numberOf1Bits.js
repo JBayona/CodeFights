@@ -28,7 +28,7 @@ function numberOf1Bits(n) {
             count++;
         }
 		//Rotate the element
-        n >>= 1;
+        n = n >> 1; //n >>= 1;
     }
     return count;
 }
