@@ -27,7 +27,8 @@ function numberOf1Bits(n) {
         if( (n & 1) ) {
             count++;
         }
-		//Rotate the element
+		//Va recorriendo a la derecha, eliminado el uno menos significativo
+		//Rotate the element example 1101 -> 110 -> 11 -> 1 -> 0
         n = n >> 1; //n >>= 1;
     }
     return count;
