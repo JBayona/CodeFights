@@ -18,5 +18,40 @@ nums = [7, 6, 5, 4, 3, 2, 1];
 k = 2;
 console.log(kthLargestElement(nums, k));
 
+function kthLargestElement(nums, k) {
+// the easy way in one line, using built in sort:
+// return nums.sort((a, b) => b - a)[k - 1]; 
+
+// using quick sort: 
+  function  quickSort(arr, left, right) {
+      var i = left,
+          j = right,
+          pivotidx = (left + right) / 2, 
+          pivot = arr[pivotidx | 0],
+          tmp;
+          
+      /* partition */
+      while (i <= j) {
+          while (arr[i] < pivot) i++;
+          while (arr[j] > pivot) j--;
+          if (i <= j) {
+              tmp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = tmp;
+              i++;
+              j--;
+          }
+      }
+
+      /* recursion */
+      if (left < j) quickSort(arr, left, j);
+      if (i < right) quickSort(arr, i, right);
+      return arr;
+  }
+  quickSort(nums, 0, nums.length - 1);
+  return nums[nums.length - k];
+}
+
+
 
 
