@@ -68,4 +68,4 @@ const parseNodes = nodes => nodes.map(checkNode); //.join(' ')
 
 const convertToHTML = nodes => nodes.length > 0 || nodes !== null ? parseNodes(nodes) : 'Invalid Conversion';
 
-console.log(convertToHTML(tree.nodes))
+console.log(convertToHTML(tree.nodes));
