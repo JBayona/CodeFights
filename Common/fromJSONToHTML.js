@@ -54,18 +54,18 @@ var tree = {
   }]
 };
 
-getHTML = node =>'<' + node.name + ' ' + parseAttrs(node.attrs) + '>' + parseNodes(node.children)  +'</' + node.name +'>';
+const getHTML = node =>'<' + node.name + ' ' + parseAttrs(node.attrs) + '>' + parseNodes(node.children)  +'</' + node.name +'>';
 
-getText = node => node.value;
+const getText = node => node.value;
 
-getAttr = attr => `${attr.name}='${attr.value}'`;
+const getAttr = attr => `${attr.name}='${attr.value}'`;
 
-parseAttrs = attrs => (attrs && attrs instanceof Array) ? attrs.map(getAttr).join(' ') : ''; //.join(' ')
+const parseAttrs = attrs => (attrs && attrs instanceof Array) ? attrs.map(getAttr).join(' ') : ''; //.join(' ')
 
-let checkNode = node => node.type === 'tag' ? getHTML(node) : getText(node);
+const checkNode = node => node.type === 'tag' ? getHTML(node) : getText(node);
 
-let parseNodes = nodes => nodes.map(checkNode); //.join(' ')
+const parseNodes = nodes => nodes.map(checkNode); //.join(' ')
 
-convertToHTML = nodes => nodes.length > 0 || nodes !== null ? parseNodes(nodes) : 'Invalid Conversion';
+const convertToHTML = nodes => nodes.length > 0 || nodes !== null ? parseNodes(nodes) : 'Invalid Conversion';
 
 console.log(convertToHTML(tree.nodes))
