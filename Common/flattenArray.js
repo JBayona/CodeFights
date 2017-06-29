@@ -4,7 +4,7 @@ function flatten(array){
     }, []);
   }
 
-//Equivalente a
+//Equivalente, ES&
 
 const flatten = array => array.reduce((acum,val) => acum.concat(Array.isArray(val) ? flatten(val) : val), []);
 
