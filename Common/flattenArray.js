@@ -4,7 +4,7 @@ function flatten(array){
     }, []);
   }
 
-//Equivalente, ES&
+//Equivalente, ES6, reduce puede tomar un valor inicial, en este caso es un arreglo
 
 const flatten = array => array.reduce((acum,val) => acum.concat(Array.isArray(val) ? flatten(val) : val), []);
 
