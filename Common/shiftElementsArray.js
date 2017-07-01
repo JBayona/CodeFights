@@ -17,6 +17,7 @@ function shiftElements(array, k){
     queremos, entonces vamos consecutivamente*/
     idx = (idx + 1)%size;
   }
+  //Retornamos el arreglo creado
   return shifted
 }
 
