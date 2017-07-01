@@ -27,6 +27,7 @@ function suffix(s){
   }
   //En el sort creamos las cadenas en base al index del suffix y las ordenamos lexicográficamente
   array.sort(function(a,b){
+	//Creamos los substrings en base a los índices
     return s.substring(a).localeCompare(s.substring(b));
   });
   return array;
