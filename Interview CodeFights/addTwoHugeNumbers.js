@@ -7,9 +7,9 @@ Your task is to add up these huge integers and return the result in the same for
 https://codefights.com/interview-practice/task/RvDFbsNC3Xn7pnQfH/description
 */
 
-function ListNode(x, node) {
-   this.value = x;
-   this.next = node ? node : null;
+function ListNode(x) {
+  this.value = x;
+  this.next = null;
 }
 
 function addTwoHugeNumbers(a, b) {
@@ -44,7 +44,7 @@ function getSum(l1, l2){
     var n2 = l2 ? l2.value : 0;
     var tmp = n1 + n2 + carry;
     if(tmp >= 10000){
-      carry = tmp/10000;
+      carry = tmp/10000 | 0;
     }else{
       carry = 0;
     }
@@ -68,8 +68,8 @@ function reverseList(l) {
   return prev;
 }
 
-l1 = new ListNode(1);
-l2 = new ListNode(9998, new ListNode(9999, new ListNode(9999, new ListNode(9999, new ListNode(9999, new ListNode(9999))))));
+l1 = new ListNode(9999);
+l2= new ListNode(9999);
 console.log(addTwoHugeNumbers(l1,l2));
 
 
