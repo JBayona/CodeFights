@@ -37,4 +37,60 @@ l1 = new ListNode(1, new ListNode(2, new ListNode(3)));
 l2= new ListNode(4, new ListNode(5, new ListNode(6)));
 console.log(mergeTwoLinkedLists(l1,l2));
 
+//Opción 2
+
+function ListNode(x, node) {
+  this.value = x;
+  this.next = node ? node : null;
+}
+
+function addNode(val){
+  return new ListNode(val);
+}
+
+function mergeTwoLinkedLists(list1, list2) {
+ var result = null;
+ var head = null;
+ while(list1 && list2){
+    if(list1.value <= list2.value){
+      if(!head){
+        result = addNode(list1.value);
+        head = result;
+      }else{
+        result.next = addNode(list1.value);
+        result = result.next;
+      }
+      list1 = list1.next;
+    }else{
+       if(!head){
+        result = addNode(list2.value);
+        head = result;
+      }else{
+        result.next = addNode(list2.value);
+        result = result.next;
+      }
+      list2 = list2.next;
+    }
+  }
+  //If l1 is empty
+  if(!list1){
+    if(!head){
+      return list2
+    }else{
+      result.next = list2;
+    }
+  }else {
+    if(!head){
+      return list1
+    }else{
+      result.next = list1;
+    }
+  }
+  return head;
+}
+
+l1 = new ListNode(5, new ListNode(10, new ListNode(15, new ListNode(40))));
+l2= new ListNode(2, new ListNode(3, new ListNode(20)));
+console.log(mergeTwoLinkedLists(l1,l2));
+
 
