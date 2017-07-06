@@ -114,6 +114,7 @@ There is no path from root to leaf with the given sum 7.
 https://codefights.com/interview-practice/task/TG4tEMPnAc3PnzRCs
 */
 
+//t is the tree and s is the number of the sum
 function hasPathWithGivenSum(t, s) {
     
     if (t === null) return s === 0;
