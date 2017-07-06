@@ -17,6 +17,7 @@ reverseInteger = n => {
     return [...''+n].reverse().join('')*1
 }
 
+//Better option
 function reverseInteger(x) {
     var y = 0
     while (x) {
