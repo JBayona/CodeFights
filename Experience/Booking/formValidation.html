@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+        #contact label{
+          display: inline-block;
+          width: 100px;
+          text-align: right;
+        }
+        #contact_submit{
+          padding-left: 100px;
+        }
+        #contact div{
+          margin-top: 1em;
+        }
+        textarea{
+          vertical-align: top;
+          height: 5em;
+        }
+        .error{
+          display: none;
+          margin-left: 10px;
+        }   
+        .error_show{
+          color: red;
+          margin-left: 10px;
+        }
+        input.invalid, textarea.invalid{
+          border: 2px solid red;
+        }
+        input.valid, textarea.valid{
+          border: 2px solid green;
+        }
+      </style>
+  </head>
+  <body>
+      <form id="myForm">
+        <div>
+          <label for="contact_name">Name:</label>
+          <input type="text" id="contact_name" name="name"/>
+          <span class="error">This field is required</span>
+        </div>
+        <div>
+          <label for="contact_email">Email:</label>
+          <input type="email" id="contact_email" name="email"/>
+          <span class="error">A valid email is required</span>
+        </div>
+        <div>
+          <label for="contact_url">URL:</label>
+          <input type="url" id="contact_url" name="url"/>
+          <span class="error">A valid url is required</span>
+        </div>
+        <div>
+          <label for="contact_message">Message:</label>
+          <textarea id="contact_message" name="message"></textarea>
+          <span class="error">This field is required</span>
+        </div>
+        <div id="contact_submit">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <script>
+        $(document).ready(function() {
+          //Name
+          $('#contact_name').on('input', function() {
+            var input=$(this);
+            var is_name=input.val();
+            if(is_name){
+              input.removeClass("invalid").addClass("valid");
+            }else{
+              input.removeClass("valid").addClass("invalid");
+            }
+          });
+          // Email must be an email
+        $('#contact_email').on('input', function() {
+            var input=$(this);
+            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var is_email=re.test(input.val());
+            if(is_email){
+              input.removeClass("invalid").addClass("valid");}
+            else{
+              input.removeClass("valid").addClass("invalid");}
+          });
+          //URL
+        $('#contact_url').on('input', function() {
+            var input=$(this);
+            if (input.val().substring(0,4)=='www.'){
+              input.val('http://www.'+input.val().substring(4));
+             }
+            var re = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/;
+            var is_url=re.test(input.val());
+            if(is_url){
+              input.removeClass("invalid").addClass("valid");
+            }else{
+              input.removeClass("valid").addClass("invalid");
+              }
+          });
+          //Text area can not be blank
+          $('#contact_message').keyup(function(event) {
+            var input=$(this);
+            var message=$(this).val();
+            if(message){
+              input.removeClass("invalid").addClass("valid");
+            }else{
+              input.removeClass("valid").addClass("invalid");
+            } 
+          });
+          //Form submitted
+          $("#contact_submit button").click(function(event){
+            /*Tendremos un arreglo de objectos de la
+            forma {name: formName, value: formValue}*/
+            var form_data=$("#myForm").serializeArray();
+            //console.log(form_data);
+            var error_free=true;
+            /*Recorriendo así el array el input serán los index y accedemos
+            a los campos como es un array*/
+            for (var input in form_data){
+              var element=$("#contact_"+form_data[input]['name']);
+              var valid=element.hasClass("valid");
+              var error_element=$("span", element.parent());
+              if (!valid){
+                error_element.removeClass("error").addClass("error_show"); 
+                error_free=false;
+              }else{
+                error_element.removeClass("error_show").addClass("error");
+              }
+            }
+            if (!error_free){
+              //Cancela el evento detonado
+              event.preventDefault(); 
+            }
+            else{
+              alert('No errors: Form will be submitted');
+            }
+          });
+        });
+      </script>
+  </body>
+</html>
