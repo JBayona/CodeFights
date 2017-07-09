@@ -1,0 +1,37 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+	<ul class="myList">
+	  <li class="myItem">Item1</li>
+	  <li class="myItem">Item2</li>
+	  <li class="myItem">Item3</li>
+	  <li class="myItem">Item4</li>
+	</ul>
+	<script>
+	$(document).ready(function(){
+		$(".myList").on('click', 'li', function(){
+		  console.log($(this).text());
+		});
+	});
+
+
+	</script>
+
+  
+ </body>
+</html>
