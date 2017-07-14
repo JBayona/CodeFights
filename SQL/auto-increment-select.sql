@@ -40,6 +40,7 @@ oldId	newId
 */
 
 /*Please add ; after each select statement*/
+/*Auto increment*/
 CREATE PROCEDURE consecutiveIds()
 BEGIN
 SELECT id as 'oldId', @n := @n + 1 n, FROM itemIds;
