@@ -6,16 +6,15 @@ let graph = {};
 function graphMaximunDifference(n, fromArray, toArray){
   //Form graph O (V + E)
   //Set vertices
-  for(let i = 1; i <= n; i++){
+  for(let i = 0; i <= n; i++){
     graph[i] = [];
   }
   //Fill edges
   for(let i = 0; i < fromArray.length; i++){
-    if(!(fromArray[i] in graph)){
-      graph[fromArray[i]] = [toArray[i]];
-    }else{
-      graph[fromArray[i]].push(toArray[i]);
-    }
+    /*Son grafos bidireccionales, entonces se agregan*
+    en ambos lados*/
+    graph[fromArray[i]].push(toArray[i]);
+    graph[toArray[i]].push(fromArray[i]);
   }
   let statistics = {max: 0, min: 0}
   let numComp = 0;
