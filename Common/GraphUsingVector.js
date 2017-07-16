@@ -11,7 +11,7 @@ function graphMaximunDifference(n, fromArray, toArray){
   }
   //Fill edges
   for(let i = 0; i < fromArray.length; i++){
-      if(toArray[i] !== 0 && fromArray[i] !== 0){
+      if(toArray[i] !== 0){
         graph[fromArray[i]-1].push(toArray[i]);
         graph[toArray[i]-1].push(fromArray[i]);
       }
@@ -55,11 +55,11 @@ function dfs(node,color, statistics){
 }
 
 
-var n = 5;
+var n = 10;
 //var fromArray = [1,1,2,2,3,4];
 //var toArray =   [2,3,3,4,4,5];
-var fromArray = [1,3,4];
-var toArray =   [2,4,5];
-//var fromArray = [1,1,6,6,9,9,2,2,8, 8,8,4,4,10,3,5,7];
-//var toArray =   [9,6,1,9,1,6,4,8,4,10,2,2,8, 8,0,7,5];
+//var fromArray = [1,3,4];
+//var toArray =   [2,4,5];
+var fromArray = [1,1,6,6,9,9,2,2,8, 8,8,4,4,10,3,5,7];
+var toArray =   [9,6,1,9,1,6,4,8,4,10,2,2,8, 8,0,7,5];
 console.log(graphMaximunDifference(n, fromArray, toArray));
