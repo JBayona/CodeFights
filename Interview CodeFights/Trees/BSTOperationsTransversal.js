@@ -1,3 +1,5 @@
+/*Binary Search Tree Operations*/
+
 function Tree(val, left, right){
   this.value = val;
   this.left = left ? left : null;
