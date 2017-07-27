@@ -1,0 +1,134 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+        #container{
+          position: relative;
+          height: 400px;
+        }
+        #topLeft{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        #topRight{
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+        }
+        #bottomLeft{
+          width: 100px;
+          height: 100px;
+          background-color: green;
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+        }
+        #bottomRight{
+          width: 100px;
+          height: 100px;
+          background-color: yellow;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+        }
+
+        #inner{
+          width: 25px;
+          height: 25px;
+          background-color: purple;
+          position: absolute;
+          bottom: 0px;
+          left: 0px
+        }
+        #inner2{
+          width: 25px;
+          height: 25px;
+          background-color: pink;
+          position: absolute;
+          top: 0px;
+          right: 0px
+        }
+        #inner3{
+          width: 25px;
+          height: 25px;
+          background-color: orange;
+          position: absolute;
+          bottom: 0px;
+          right: 0px
+        }
+        #inner4{
+          width: 25px;
+          height: 25px;
+          background-color: gray;
+          position: absolute;
+          top: 0px;
+          left: 0px
+        }
+
+        #innerDeep1{
+          width: 10px;
+          height: 10px;
+          background-color: black;
+          position: absolute;
+          bottom: 0px;
+          left: 0px
+        }
+
+        #innerDeep2{
+          width: 10px;
+          height: 10px;
+          background-color: black;
+          position: absolute;
+          top: 0px;
+          right: 0px
+        }
+         #center{
+          background-color: #00FFFF;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="topLeft">
+        <div id="inner"></div>
+      </div>
+      <div id="topRight">
+        <div id="inner2"></div>
+      </div>
+      <div id="bottomLeft">
+        <div id="inner3"></div>
+      </div>
+      <div id="bottomRight">
+        <div id="inner4">
+          <div id="innerDeep1"></div>
+          <div id="innerDeep2"></div>
+        </div>
+      </div>
+      <div id="center">Centered</div>
+    </div>
+  </body>
+</html>
