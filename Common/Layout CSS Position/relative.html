@@ -1,0 +1,68 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+        #first{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          position: relative;
+          top: 0px;
+          left: 35px; /*35 px of left from the normal flow*/
+          /*right: 0px; We can not do this as is not the normal flow*/
+        }
+       #second{
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: relative;
+          top: 20px; /*Leaving 20 px from the top of the #first element following normal flow*/
+       }
+      #third{
+          width: 100px;
+          height: 100px;
+          background-color: green;
+          position: relative;
+          right: 15px;
+          /*Aquí pasan dos cosas, primero hay un overlap entre #second y #third porque #second tiene 20px de top,
+          entonces al poner #third en el flujo normal con relative, se está traslapando esos 20px, como tenemos
+          el flujo normal y lo pone en el left 0, al ponerle el right, le indicamos que recorra 15px a la derecha,
+          al estar en el left 0px, el elemento se empieza a perder*/
+       }
+       #inner{
+          width: 25px;
+          height: 25px;
+          background-color: yellow;
+          position: relative;
+          top: 35px;
+          left: 45px;
+          /*Aquí sigue el flujo normal adentro de nuestro div padre, siguiendo el flujo normal pero
+          ahora dento de #first que es el ancestro de #inner*/
+       }
+      </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="first">
+        <div id="inner"></div>
+      </div>
+      <div id="second">
+      </div>
+      <div id="third">
+      </div>
+    </div>
+  </body>
+</html>
