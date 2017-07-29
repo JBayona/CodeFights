@@ -17,6 +17,7 @@ The absolute difference between the positions of the two 2s is 3, which is more 
 https://codefights.com/interview-practice/task/njfXsvjRthFKmMwLC/description
 */
 
+//Opción 1
 /*function containsCloseNums(nums, k) {
   //Count the result
   let map = {};
@@ -52,6 +53,7 @@ function twoSum(array, k){
   return false;
 }*/
 
+//Opción 2
 function containsCloseNums(nums, k) {
   var seen = {},
   length = nums.length;
@@ -70,6 +72,21 @@ function containsCloseNums(nums, k) {
 		  seen[nums[i-k]]--;
   }
   return false;
+}
+
+//Opción 3
+function containsCloseNums(nums, k) {
+	  var indexes={}
+	  for(i=0; i<nums.length; i++){
+		  /*Si el index actual menos el index en donde vimos el elemento
+		  es menor o igual a k sabemos que es true*/
+		  if(i-indexes[nums[i]]<=k) return true
+		  /*Almacenamos los elementos del array como clave
+		  y como valor los indexes*/
+		  indexes[nums[i]]=i
+	  }
+
+	return false
 }
 
 nums = [0, 1, 2, 3, 5, 2];
