@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+        #contact label{
+          display: inline-block;
+          width: 100px;
+          text-align: right;
+        }
+        #contact_submit{
+          padding-left: 100px;
+        }
+        #contact div{
+          margin-top: 1em;
+        }
+        textarea{
+          vertical-align: top;
+          height: 5em;
+        }
+        .error{
+          display: none;
+          margin-left: 10px;
+        }   
+        .error_show{
+          color: red;
+          margin-left: 10px;
+        }
+        input.invalid, textarea.invalid{
+          border: 2px solid red;
+        }
+        input.valid, textarea.valid{
+          border: 2px solid green;
+        }
+      </style>
+  </head>
+  <body>
+      <form id="myForm">
+        <div>
+          <label for="contact_name">Name:</label>
+          <input type="text" id="contact_name" name="name"/>
+          <span class="error">This field is required</span>
+        </div>
+		<div>
+          <label for="contact_lastName">Las Name:</label>
+          <input type="text" id="contact_lastName" name="lastName"/>
+          <span class="error">This field is required</span>
+        </div>
+		<div>
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country"/>
+          <span class="error">This field is required</span>
+        </div>
+        <!--div>
+          <label for="contact_email">Email:</label>
+          <input type="email" id="contact_email" name="email"/>
+          <span class="error">A valid email is required</span>
+        </div-->
+        <!--div>
+          <label for="contact_url">URL:</label>
+          <input type="url" id="contact_url" name="url"/>
+          <span class="error">A valid url is required</span>
+        </div-->
+        <!--div>
+          <label for="contact_message">Message:</label>
+          <textarea id="contact_message" name="message"></textarea>
+          <span class="error">This field is required</span>
+        </div-->
+        <div id="contact_submit">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <script>
+        $(document).ready(function() {
+		  //Array as [{name:"myName", value: "myValue"}]
+		  
+		  $("#myForm button").click(function(event){
+			let error = false;
+		    let inputs = $("input").serializeArray();
+			for(let data of inputs){
+				if($("[name=" + data.name +"]").val() === ''){
+					let error_element = $("[name=" + data.name +"] ~ span");
+					console.log(error_element);
+					error_element.removeClass("error").addClass("error_show");	
+					error = true;
+				}
+			}
+			
+			if(error){
+				//No submit
+				event.preventDefault();
+			}else{
+				console.log('No errors, form will be submitted');
+			}
+		  });
+        });
+      </script>
+  </body>
+</html>
