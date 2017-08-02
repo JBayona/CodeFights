@@ -1,0 +1,157 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+        .menu, .submenu {
+		  list-style: none; 
+		  padding-left: 0; 
+		}
+		.menu li {
+		  float: left; 
+		  position: relative; 
+		}
+
+		.submenu {
+		  position: absolute; 
+		  top: 100%; 
+		}
+		.element-1 .submenu, .element-2 .submenu {
+		  -webkit-transition: all 0s ease; 
+		  transition: all 0s ease;  
+		}
+		.element-1 .submenu {
+		  left: -999em; 
+		}
+		.element-1:hover .submenu, .element-2:hover .submenu {
+		  -webkit-transition-delay: .25s; 
+		  transition-delay: .3s; 
+		}
+		.element-1:hover .submenu {
+		  left: 0; 
+		}
+		.element-2 .submenu {
+		  right: -999em; 
+		}
+		.element-2:hover .submenu {
+		  right: 0; 
+		}
+		.menu a, .submenu a {
+		  display: block; 
+		  padding: .5em .75em; 
+		  background-color: #bbb; 
+		  text-decoration: none; 
+		  white-space: nowrap; 
+		}
+		.menu a:hover, .submenu a:hover {
+		  background-color: #ddd; 
+		}
+      </style>
+  </head>
+  <body>
+	<ul class="menu">
+	  <li class="element-1"><a href="#">Tier 1</a>
+		<ul class="submenu">
+		  <li><a href="#">Tier 1a</a></li>
+		  <li><a href="#">Tier 1b</a></li>
+		  <li><a href="#">Tier 1c</a></li>
+		</ul>
+	  </li>
+	  <li class="element-2"><a href="#">Tier 2</a>
+		<ul class="submenu">
+		  <li><a href="#">Tier 2a</a></li>
+		  <li><a href="#">Tier 2b</a></li>
+		  <li><a href="#">Tier 2c</a></li>
+		</ul>
+	  </li>
+	</ul>
+      <script>
+        $(document).ready(function() {
+          //Name
+          $('#contact_name').on('input', function() {
+            var input=$(this);
+            var is_name=input.val();
+            if(is_name){
+              input.removeClass("invalid").addClass("valid");
+            }else{
+              input.removeClass("valid").addClass("invalid");
+            }
+          });
+          // Email must be an email
+        $('#contact_email').on('input', function() {
+            var input=$(this);
+            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var is_email=re.test(input.val());
+            if(is_email){
+              input.removeClass("invalid").addClass("valid");}
+            else{
+              input.removeClass("valid").addClass("invalid");}
+          });
+          //URL
+        $('#contact_url').on('input', function() {
+            var input=$(this);
+            if (input.val().substring(0,4)=='www.'){
+              input.val('http://www.'+input.val().substring(4));
+             }
+            var re = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/;
+            var is_url=re.test(input.val());
+            if(is_url){
+              input.removeClass("invalid").addClass("valid");
+            }else{
+              input.removeClass("valid").addClass("invalid");
+              }
+          });
+          //Text area can not be blank
+          $('#contact_message').keyup(function(event) {
+            var input=$(this);
+            var message=$(this).val();
+            if(message){
+              input.removeClass("invalid").addClass("valid");
+            }else{
+              input.removeClass("valid").addClass("invalid");
+            } 
+          });
+          //Form submitted
+          $("#contact_submit button").click(function(event){
+            /*Tendremos un arreglo de objectos de la
+            forma {name: formName, value: formValue}*/
+            var form_data=$("#myForm").serializeArray();
+            //console.log(form_data);
+            var error_free=true;
+            /*Recorriendo así el array el input serán los index y accedemos
+            a los campos como es un array*/
+            for (var input in form_data){
+              var element=$("#contact_"+form_data[input]['name']);
+              var valid=element.hasClass("valid");
+              var error_element=$("span", element.parent());
+              if (!valid){
+                error_element.removeClass("error").addClass("error_show"); 
+                error_free=false;
+              }else{
+                error_element.removeClass("error_show").addClass("error");
+              }
+            }
+            if (!error_free){
+              //Cancela el evento detonado
+              event.preventDefault(); 
+            }
+            else{
+              alert('No errors: Form will be submitted');
+            }
+          });
+        });
+      </script>
+  </body>
+</html>
