@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Form validation</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+    <form id="myForm" action="/signup" method="post">
+        <label for="name">Name *</label>
+        <input type="text" name="name" required/>
+
+        <label for="surname">Surname</label>
+        <input type="text" name="surname"/>
+
+        <label for="phone">Phone *</label>
+        <input type="text" name="phone required"/>
+
+        <label for="email">E-mail *</label>
+        <input type="text" name="email" required/>
+
+        <label for="email">Address</label> required : required
+        <input type="text" name="address"/>
+
+        <button type="submit">Send</button>
+    </form>
+    <script>
+      // Add your JavaScript here
+      $(document).ready(function(){
+        $("#myForm button[type = 'submit']").submit(function(event){
+          let inputs = $("myForm : input[required]").serializeArray();
+          //[{name: 'name', value: '?'},{]}
+          let error = false;
+          let emailValid = true;
+          for(let data of inputs){
+           if(inputs.value === ''){
+               //Show some error message
+               error = true;
+           }
+          }
+       
+         let emails = $("#myForm input[type = 'email']").serializeArray();
+         for(let email of emails){
+             if(!validateEmail(emails.value)){
+              emailValid = false;
+             }
+         }
+       
+         if(error || emailValid){
+             event.preventDefault(); //Avoid submitting
+         }else{
+             //Form submitted
+         }
+   });
+   
+   function validateEmail(value) {
+       return true;
+   }
+});
+    </script>
+</body>
+</html>
