@@ -1,0 +1,15 @@
+body {
+	background-color: #533872;
+	color: #fff;
+	font-family: verdana;
+}
+
+form {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	/*Margin del 20% en top y down, y centrará automaticamente
+	dejando espacio de izquiera y derecha*/
+	margin: 20% auto;
+	text-align: center;
+}
