@@ -18,9 +18,19 @@
   </head>
   <body>
     <form>
-      <label>Password:</label>
-      <input type="password" />
-      <span class="tooltip">?</span>
+      <!--Para crear tooltips genericas sólo necesitamos tener la clase
+      tooltip y tener un atributo de data-tooltip para mostar el contenido
+      en todos nuestros elementos html-->
+      <div>
+        <label>Name:</label>
+        <input type="text" />
+        <span class="tooltip" data-tooltip="Please enter your name in the input">?</span>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" />
+        <span class="tooltip" data-tooltip="Hi this is an awsome tooltip created with pure CSS3 and HTML5">?</span>
+      </div>
     </form>
   </body>
 </html>

@@ -3,6 +3,9 @@ body {
 	color: #fff;
 	font-family: verdana;
 }
+div { 
+	margin: 10px;
+}
 
 form {
 	position: relative;
@@ -12,4 +15,68 @@ form {
 	dejando espacio de izquiera y derecha*/
 	margin: 20% auto;
 	text-align: center;
+}
+
+/*Tooltip styles*/
+
+.tooltip {
+	/*Usaremos pseudo classes absolutely relative a tooltiop
+	es por eso que queremos el elemento relative*/
+	position: relative;
+	background-color: rgb(0, 0, 55);
+	padding: 5px 10px;
+	border-radius: 100%;
+	font-size: 15px;
+	/*Cuando ponemos el cursot en el elemento
+	aparece un signo de interorogación*/
+	cursor: help;
+}
+
+.tooltip::before, .tooltip::after {
+	position: absolute;
+	left: 50%;
+	/*Con esto al inicio esconderemos las tooltips*/
+	opacity: 0;
+	/*Cualquiera propiedad de CSS que cambie quiero animarla*/
+	transition: all ease 0.3s; /*animarla después de 0.3 segundos*/
+}
+
+
+/*Estilo del tríangulo*/
+.tooltip::before {
+	content: "";
+	/*Liitle triangle*/
+	border-width: 10px 8px 0px 8px;
+	border-style: solid;
+	/*Esto forma el triangulo, el primer rgb (0,0,55) le da color
+	a la parte de arriba que son los 10px, los demás no tienen color
+	y es lo que forma el triangulo*/
+	border-color: rgb(0, 0, 55) transparent transparent transparent;
+	margin-left: -8px;
+	top: -15px;
+}
+
+/*Estilo del bubble*/
+.tooltip::after{
+	content: attr(data-tooltip);/*"Testing text in tooltip";*/
+	background-color: rgb(0, 0, 55);
+	top: -15px; /*Igual que el triangulo*/
+	font-size: 10px;
+	width: 200px;
+	/*-100 porque es la mitad de su width y lo recorremos al
+	left para que esté centrado*/
+	margin-left: -100px;
+	padding: 14px;
+	color: #eee;
+	border-radius: 10px;
+	/*No sabemos la cantida exacta de pixeles para que el bubble toque
+	el triangulo, como queremos subir el 100% de nuestro elemento, hacemos
+	un translate de -100% para que lo suba*/
+	transform: translateY(-100%);
+}
+
+/*Hover effects*/
+
+.tooltip:hover::before, .tooltip:hover::after {
+	opacity: 1;
 }
