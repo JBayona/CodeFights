@@ -4,6 +4,7 @@ Example: "pop this tacocat seems nice at noon"
 "pop", "s tacocat s", " tacocat ", "tacocat", "acoca", "coc", "noon"
 */
 
+//Function to iterate over all of our letters
 findAllPalindromes = str =>{
   let result = [];
   let findPalindrome;
@@ -16,6 +17,7 @@ findAllPalindromes = str =>{
   return result;
 }
 
+//Check if we find a palindrome in the next same letter, that is our break point
 hasPalindrome = (character, str, index) => {
   for(let i = index + 1; i < str.length; i++){
     if(character === str[i]){
@@ -28,6 +30,7 @@ hasPalindrome = (character, str, index) => {
   }
 }
 
+//Function to verify if it´s a palindrome
 checkPalindrome = str => str === str.split('').reverse().join('');
 
 str = "pop this tacocat seems nice at noon";
