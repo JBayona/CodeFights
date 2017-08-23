@@ -29,12 +29,7 @@
           position: absolute; 
         }
 
-        .element .submenu{
-          -webkit-transition: all 0s ease; 
-          transition: all 0s ease;  
-        }
-
-        /*Trae desaparece al submenu de la página*/
+        /*Desaparece al submenu de la página*/
         .element .submenu {
           left: -999em; 
         }
@@ -48,7 +43,15 @@
           -webkit-transition-delay: .3s; 
           transition-delay: .3s; 
         }
-        
+
+        /*
+        .element:hover .submenu {
+          left: 0; 
+          -webkit-transition: all .3s ease;
+          transition: all .3s ease; 
+        }
+        */
+
         .menu a, .submenu a {
           display: block; 
           padding: .5em .75em; 
