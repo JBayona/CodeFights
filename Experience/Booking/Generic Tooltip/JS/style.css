@@ -1,0 +1,28 @@
+body {
+	background-color: #533872;
+	color: #fff;
+	font-family: verdana;
+}
+div { 
+	margin: 10px;
+}
+
+/*Tooltip styles*/
+
+.tooltip{
+	background-color: rgb(0, 0, 55);
+	padding: 5px 10px;
+	border-radius: 10px;
+	position: absolute;
+	font-size: 12px;
+	z-index: 1;
+	width: 200px;
+	/*top: -30px;*/
+	margin-left: 5px;
+	text-align: center;
+	transition-delay: 0.3s;
+}
+
+.parent{
+	position: relative;
+}
