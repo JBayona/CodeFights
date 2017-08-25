@@ -33,7 +33,7 @@
           let error = false;
           let emailValid = true;
           for(let data of inputs){
-           if(inputs.value === ''){
+           if(data.value === ''){
                //Show some error message
                error = true;
            }
@@ -41,7 +41,7 @@
        
          let emails = $("#myForm input[type = 'email']").serializeArray();
          for(let email of emails){
-             if(!validateEmail(emails.value)){
+             if(!validateEmail(email.value)){
               emailValid = false;
              }
          }
