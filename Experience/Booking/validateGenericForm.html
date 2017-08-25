@@ -31,7 +31,7 @@
           let inputs = $("myForm : input[required]").serializeArray();
           //[{name: 'name', value: '?'},{]}
           let error = false;
-          let emailValid = true;
+          let emailError = false;
           for(let data of inputs){
            if(data.value === ''){
                //Show some error message
@@ -42,11 +42,11 @@
          let emails = $("#myForm input[type = 'email']").serializeArray();
          for(let email of emails){
              if(!validateEmail(email.value)){
-              emailValid = false;
+              emailError = true;
              }
          }
        
-         if(error || emailValid){
+         if(error || emailError){
              event.preventDefault(); //Avoid submitting
          }else{
              //Form submitted
