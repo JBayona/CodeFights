@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendar</title>
+        <link type="text/css" rel="stylesheet" href="calendar.css">
+        <script type="text/javascript" src="calendar.js"></script>
+    </head>
+    <body>
+        <div id="calendar-container">
+            <div id="calendar-header">
+                <span id="calendar-month-year"></span>
+            </div>
+            <div id="calendar-dates">
+            </div>
+        </div>
+        <div id="events">
+        	<p id="event-day">Events:</p>
+        	<button type="button" onclick="addEvent()">Add Event</button>
+        	<input id="textEvent" placeholder="Event name" type="text" name="event"><br>
+        	<input id="hiddenInput" type="hidden"><br>
+        </div>
+        <div id="eventsResult">
+        	<p>Appointments:</p>
+        	<p id="eventsSummary">
+        	</p>
+    </body>
+</html>

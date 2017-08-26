@@ -1,0 +1,49 @@
+#calendar-container{
+    padding: 10px;
+    width: 210px;
+    height: 240px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    background-image: linear-gradient(#fff, #d3d3d3);
+}
+
+#calendar-container>div{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#calendar-month-year{
+    margin: 5px;
+}
+
+#calendar-dates table tr td{
+    padding: 5px;
+}
+
+#calendar-dates table tr td:hover { 
+   background-color: #ccc;
+   cursor: pointer;
+}
+
+#calendar-dates table tr td:active {
+  top: 1px;
+}
+
+p{
+    font-family: Arial;
+}
+
+#eventsResult{
+    padding: 10px;
+    width: 400px;
+    height: 240px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    background-image: linear-gradient(#fff, #d3d3d3);
+}
