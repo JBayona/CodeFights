@@ -1,5 +1,4 @@
 
-#
 #You've heard of bit.ly, ow.ly, and maybe even adf.ly? Well, today I am introducing CodeFightly!
 
 #Like those other companies, CodeFightly uses HTTP redirects to shorten URLs. Also like those other companies, they do so by assigning a "code" (e.g. 2bJzULM) to your long URL that can be used to look that long URL up when a visitor types the code in at the end of the short URL (e.g. http://bit.ly/2bJzULM).
