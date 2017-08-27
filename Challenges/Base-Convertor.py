@@ -19,7 +19,7 @@
 
 #For alphabet = ".Calvin" and code = "nnnnn",
 #the output should be
-#CodeFightly(alphabet, code) = "C.....".
+#CodeFightly(alphabet, code) = "C......".
 
 #Note that the alphabets can have characters beyond just letters and that the next code might actually be longer than the previous one.
 
