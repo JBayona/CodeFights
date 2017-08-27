@@ -2,7 +2,7 @@
 #You've heard of bit.ly, ow.ly, and maybe even adf.ly? Well, today I am introducing CodeFightly!
 
 #Like those other companies, CodeFightly uses HTTP redirects to shorten URLs. Also like those other companies, they do so by assigning a "code" (e.g. 2bJzULM) to your long URL that can be used to look that long URL up when a visitor types the code in at the end of the short URL (e.g. http://bit.ly/2bJzULM).
-
+#Python program
 #The codes at CodeFightly are actually just incrementing numbers but they have been shortened by converting them into strings of letters. The CodeFightly engineers could have just made "a" = 0, "b" = 1, "ba" = 26 or something similarly simple. But, they wanted the codes to seem a little more random. So, they created a system where the letters (and other symbols) in the code are in a custom-ordered alphabet.
 
 #Your mission is the use this alphabet and a code to figure out what the next numerical code will be.
