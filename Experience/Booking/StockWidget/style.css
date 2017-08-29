@@ -1,0 +1,13 @@
+body {
+	font-family: verdana;
+}
+
+table{
+	text-align: center;
+	border: 1 solid black;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
