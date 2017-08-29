@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//Get the initial values for the app
 	$('#tableStock tbody').html(getInformation(data));
-	
+	//$('tbody').detach().html(getInformation(data)).appendTo('table');
 });
 
 function getInformation(response){
@@ -25,7 +25,7 @@ function getInformation(response){
    		getInformation(data);
    		console.log('Testing');
    		poll();
-    }, 50000); //5 minutes
+    }, 5000); //5 seconds
 })();
 
 //Opción 2
