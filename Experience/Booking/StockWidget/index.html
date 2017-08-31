@@ -15,6 +15,7 @@
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
       <script src="stock.js"></script>
   </head>
   <body>
@@ -31,5 +32,9 @@
         <tbody>
         </tbody>
       </table>
+      <div id = "containerCanvas">
+        <h1>Pie Chart</h1>
+        <canvas id = "myCanvas" width = "300" height = "300"></canvas>
+      </div>
   </body>
 </html>
