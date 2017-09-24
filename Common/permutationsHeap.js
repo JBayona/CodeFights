@@ -5,12 +5,12 @@ permutaciones posibles
 
 var permute = function(str){
   var result = [];
-  heapPermutation([...str], str.length, str.length, result);
+  heapPermutation([...str], str.length, result);
   return result;
 }
 
 //Generating permutation using Heap Algorithm
-function heapPermutation(a, size, n, result){
+function heapPermutation(a, size, result){
     // if size becomes 1 then prints the obtained
     // permutation
     if (size == 1){
@@ -20,7 +20,7 @@ function heapPermutation(a, size, n, result){
     }
 
     for (var i=0; i<size; i++){
-        heapPermutation(a, size-1, n, result);
+        heapPermutation(a, size-1, result);
 
         // if size is odd, swap first and last
         // element
