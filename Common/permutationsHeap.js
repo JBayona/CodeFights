@@ -1,6 +1,8 @@
 /*
 Este algoritmo usa el heap algorithm para hacer todas las 
 permutaciones posibles
+
+O(N!)
 */
 
 var permute = function(str){
