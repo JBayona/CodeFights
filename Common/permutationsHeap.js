@@ -1,6 +1,9 @@
 /*
 Este algoritmo usa el heap algorithm para hacer todas las 
-permutaciones posibles
+permutaciones posibles.
+
+Si se desea retornar las permutaciones ordenadas
+debemos hacer un sort a nuestro result array
 
 O(N!)
 */
