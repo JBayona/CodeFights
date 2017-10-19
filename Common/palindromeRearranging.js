@@ -26,8 +26,9 @@ function palindromeRearranging(inputString) {
 
   //Podemos formar un palíndromo siempre y cuando no
   //tengamos más de un número impar en nuestro conteo
+  //Número impar
   for(var prop in countObj){
-    if(countObj[prop] & 1){ //countObj[prop] % 2 == 0 
+    if(countObj[prop] & 1){ //countObj[prop] % 2 != 0 
       oddValues++;
     }
   }
