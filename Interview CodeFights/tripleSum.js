@@ -1,4 +1,5 @@
 /*
+
 Note: The expected time complexity for this task is O(n2).
 
 You have an array a composed of exactly n elements. Given a number x, determine whether or not a contains three elements for which the sum is exactly x.
