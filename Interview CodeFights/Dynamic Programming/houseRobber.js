@@ -20,7 +20,7 @@ function houseRobber(nums) {
     if(nums==null||nums.length===0)
         return 0;
  
-    if(nums.length==1)return nums[0];
+    if(nums.length===1)return nums[0];
  
     let dp = new Array(nums.length);
     dp[0]=nums[0];
