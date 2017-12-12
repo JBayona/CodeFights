@@ -3,6 +3,7 @@ Given a string of digits, return all of the possible letter combinations that th
 The mapping of digits to letters is the same as you would find on a telephone's buttons, as in the example below:
 
 https://codefights.com/interview/k77f4rHntp3NbzeXg/description
+
 */
 
 function pressingButtons(buttons) {
