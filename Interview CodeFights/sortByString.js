@@ -1,4 +1,5 @@
 /*
+
 Sort the letters in the string s by the order they occur in the string t.
 
 Example
