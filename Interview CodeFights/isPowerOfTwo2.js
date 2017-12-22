@@ -1,4 +1,5 @@
 /*
+
 Determine whether the given number n is a power of two.
 
 Example
