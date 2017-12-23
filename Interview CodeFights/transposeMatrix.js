@@ -1,3 +1,7 @@
+/*
+Transponse a matrix
+*/
+
 function transposeMatrix(a) {
     // Transpose
     for(var i = 0;i<a.length;i++){
