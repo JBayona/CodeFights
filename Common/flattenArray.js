@@ -1,3 +1,7 @@
+/*
+Flatten Array
+*/
+
 function flatten(array){
     return array.reduce(function(acum, val){
       return acum.concat(Array.isArray(val) ? flatten(val) : val)
