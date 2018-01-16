@@ -76,7 +76,7 @@ var return1Twice = times(returnX, 2);
 console.log(typeof return1Twice); // function
 console.log(return1Twice(3)); // 3
 console.log(return1Twice(3)); // 3
-console.log(return1Twice(3)); // undefine
+console.log(return1Twice(3)); // undefined
 
 /**
  * Given a soiurce object, return a new object that has a property for each unique key in the source object, and an array of values
