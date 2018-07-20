@@ -24,31 +24,31 @@ https://app.codesignal.com/challenge/8FdeLisamv6cFZPAc
 */
 
 function smallestProduct(arr) {
-    arr = arr.sort((a,b) => a - b);
-    let last = arr.length-1;
-    let countNegative = 0;
-    let op1 = arr[0] * arr[1] * arr[2]; // First three
-    let op2 = arr[0] * arr[last] * arr[last-1]; // Second option (first + last two)
+  arr = arr.sort((a,b) => a - b);
+  let last = arr.length-1;
+  let countNegative = 0;
+  let op1 = arr[0] * arr[1] * arr[2]; // First three
+  let op2 = arr[0] * arr[last] * arr[last-1]; // Second option (first + last two)
 
-    // Count the number of negative numbers
-    for(let i = 0; i < 3; i++) {
-        if(arr[i] < 0) {
-            countNegative++;
-        }
+  // Count the number of negative numbers
+  for(let i = 0; i < 3; i++) {
+    if(arr[i] < 0) {
+      countNegative++;
     }
-    
-    if(countNegative <= 2 && countNegative > 0) {
-        return op2;
+  }
+  
+  if(countNegative <= 2 && countNegative > 0) {
+    return op2;
+  }
+  
+  if(countNegative === 3) {
+    if(Math.abs(arr[1]) > Math.abs(arr[last])) {
+      return op1;
+    } else {
+      return op2;
     }
-    
-    if(countNegative === 3) {
-        if(Math.abs(arr[1]) > Math.abs(arr[last])) {
-            return op1;
-        } else {
-            return op2;
-        }
-    }
-    
-    // Only positive numbers (first three)
-    return op1;
+  }
+  
+  // Only positive numbers (first three)
+  return op1;
 }
