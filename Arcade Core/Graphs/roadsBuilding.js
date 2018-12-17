@@ -1,5 +1,13 @@
 /*
-https://app.codesignal.com/arcade/graphs-arcade/kingdom-roads/CSzczQWdnYwmyEjvv/solutions
+https://app.codesignal.com/arcade/graphs-arcade/kingdom-roads/CSzczQWdnYwmyEjvv/
+
+For cities = 4 and roads = [[0, 1], [1, 2], [2, 0]],
+the output should be
+roadsBuilding(cities, roads) = [[0, 3], [1, 3], [2, 3]].
+
+The basic idea is to check whether the graph is connected with all cities, if not, we should
+add the missing connections.
+
 */
 
 function roadsBuilding(cities, roads) {
@@ -25,12 +33,12 @@ function roadsBuilding(cities, roads) {
     for(let j = 0; j < cities; j++) {
       // Use i !== j to avoid repeat the connection like [0,0], [1,1], [2,2]
       if(!graph[i][j] && !graph[j][i] && i !== j){
-          result.push([i, j]);
-          // Mark as visited to avoid duplicates in both as we
-          // have a undirected graph
-          graph[i][j] = true;
-          graph[j][i] = true;
-        }
+        result.push([i, j]);
+        // Mark as visited to avoid duplicates in both as we
+        // have a undirected graph
+        graph[i][j] = true;
+        graph[j][i] = true;
+      }
     }
   }
   
