@@ -1,4 +1,5 @@
 /*
+
 https://app.codesignal.com/arcade/graphs-arcade/kingdom-roads/CSzczQWdnYwmyEjvv/
 
 For cities = 4 and roads = [[0, 1], [1, 2], [2, 0]],
