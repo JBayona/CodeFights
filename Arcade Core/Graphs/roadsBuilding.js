@@ -1,5 +1,4 @@
 /*
-
 https://app.codesignal.com/arcade/graphs-arcade/kingdom-roads/CSzczQWdnYwmyEjvv/
 
 For cities = 4 and roads = [[0, 1], [1, 2], [2, 0]],
@@ -8,7 +7,6 @@ roadsBuilding(cities, roads) = [[0, 3], [1, 3], [2, 3]].
 
 The basic idea is to check whether the graph is connected with all cities, if not, we should
 add the missing connections.
-
 */
 
 function roadsBuilding(cities, roads) {
