@@ -16,7 +16,7 @@ function efficientRoadNetwork(n, roads) {
         graph[i][i] = 0;
     }
     
-    // Fill weight of graph
+    // Fill weight of graph, undirected graph.
     for(let i = 0; i < roads.length; i++) {
         let pair = roads[i];
         let from = pair[0];
